@@ -15,13 +15,37 @@
   gap: 8px;
 }
 
+.start_button{
+    padding: 4px 6px;
+}
+
+.form{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 25px;
+}
+
 .input {
-    width: 250px;
+    width: 120px;
+    height: 100%;
     font-size: 18px;
-    border: 1px solid white;
-    border-radius: 0px;
+    border: 1px solid var(--foreground);
+    border-radius: 2px;
 }
 
 .submit_button{
-    height: 23px;
+    height: 100%;
+    padding: 3px;
+    
+}
+
+.button_container{
+    display: flex;
+    gap: 5px;
+}
+
+.button_container button{
+    padding: 3px 5px;
 }

@@ -42,6 +42,11 @@ a {
   text-decoration: none;
 }
 
+button{
+  border: 1px solid var(--foreground);
+  border-radius: 2px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

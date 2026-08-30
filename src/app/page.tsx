@@ -10,6 +10,7 @@ export default function Page() {
   const [activeGame, setActiveGame] = useState<boolean | null>(false);
   const [savedNumber, setSavedNumber] = useState<number | null>(null);
   const [text, setText] = useState<string>("Жду ввода");
+  const [count, setCount] = useState<number>(0)
 
   const [guessNumber, setGuessNumber] = useState(generateNumber);
 
@@ -44,7 +45,9 @@ export default function Page() {
 
       {activeGame ? (
         <div className={styles.input_container}>
-          <p title="типо ждун)))))))">{text}</p>
+          <h2>{text}</h2>
+
+          <p>количество попыток: {count}</p>
 
           <form className={styles.form} onSubmit={handleSubmit}>
             <input
@@ -57,15 +60,18 @@ export default function Page() {
             />
 
             <button className={styles.submit_button} type="submit">
-              Ввод
+              Проверить
             </button>
           </form>
-          <button onClick={() => setActiveGame(false)}>назад</button>
-          <button onClick={() => restartGame()}>Занаво</button>
+
+          <div className={styles.button_container}>
+            <button onClick={() => setActiveGame(false)}>Назад</button>
+            <button onClick={() => restartGame()}>Заново</button>
+          </div>
         </div>
       ) : (
         <>
-          <button onClick={() => setActiveGame(true)}>Нажми на меня!</button>
+          <button className={styles.start_button} onClick={() => setActiveGame(true)}>Нажми на меня!</button>
         </>
       )}
 
